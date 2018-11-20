@@ -1,0 +1,214 @@
+%------- Document Class: select one of the following -----------
+%\documentclass[12pt,a4paper]{report}             % draft - one sided
+\documentclass[12pt,twoside]{report} 			 % final - two sided
+\usepackage[numbers,square,sort]{natbib}
+%---------------------------------------------------------------
+%----------------- LaTeX packages ------------------------------
+% The package loading order is important here.
+% fancyhdr must come before the main thesis.sty
+\usepackage{fancyhdr}           % heading format
+
+%---------------------------------------------------------------
+\usepackage{mythesis}       % thesis style adapted from utthesis
+%---------------------------------------------------------------
+
+%\usepackage[dvips]{graphicx}
+
+%\usepackage{srcltx}
+%%\usepackage[fleqn]{amsmath}
+%%\usepackage{psfrag}
+%\usepackage{shading}
+%\usepackage{color}
+%\usepackage[dvips]{colortbl}
+\usepackage{graphicx,epstopdf,tabularx,multirow}
+\usepackage[retainorgcmds]{IEEEtrantools}
+%\usepackage{graphicx,url,multirow,rotating,pdfpages,epstopdf,amsfonts,amssymb,amsthm,newlfont,psfrag,times,epsfig,subfigure,tabularx,color,booktabs}
+
+%%\usepackage{float}
+\usepackage{enumerate}
+%%\usepackage{alltt}
+\usepackage{url}
+%\usepackage{hyperlink}
+%\usepackage{psfrag}
+\usepackage{subfigure}
+\usepackage{hyperref}
+%\usepackage{setspace}
+%\usepackage{ltablex}
+
+% American Mathematics Society latex math extensions
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{alphalph}
+\renewcommand*{\thesubfigure}{(\alphalph{\value{subfigure}})}
+
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+%handy bit of math boldfacing (John Dines, 2001)
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
+
+%\renewcommand{\baselinestretch}{1}
+
+%-------------------- Float Placement --------------------------
+% Fiddle with the placement of floats within the document
+% 
+%---------------------------------------------------------------
+  % Alter some LaTeX defaults for better treatment of figures:
+  % See p.105 of "TeX Unbound" for suggested values.
+  % See pp. 199-200 of Lamport's "LaTeX" book for details.
+  
+  %   General parameters, for ALL pages:
+  \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+  \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+  
+  %   Parameters for TEXT pages (not float pages):
+  \setcounter{topnumber}{2}
+  \setcounter{bottomnumber}{2}
+  \setcounter{totalnumber}{2}     % 2 may work better
+  \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+  
+  %   Parameters for FLOAT pages (not text pages):
+  \renewcommand{\floatpagefraction}{0.35}	% require fuller float pages
+	
+
+	% remember to use [htp] or [htpb] for placement
+%---------------------------------------------------------------
+
+	
+\begin{document}
+\sloppy
+%---------------------------------------------------------------
+\renewcommand{\thesistitle}{Thesis Title}
+
+\renewcommand{\thesisauthor}{Name}
+\renewcommand{\thesisauthorpreviousdegrees}{Previous Degree}
+\renewcommand{\thesismonth}{leave empty}
+\renewcommand{\thesisyear}{Year}
+
+\renewcommand{\universityname}{Queensland University of Technology}
+\renewcommand{\facultyname}{%\
+    Speech and Audio Research Laboratory \\ %
+    Science and Engineering Faculty}
+\renewcommand{\thesissupervisor}{Supervisor}
+\renewcommand{\thesistype}{PhD Thesis}
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\thesistitlepage            % main title page
+%---------------------------------------------------------------
+%\thesissignaturepage        % blank page for substitution of
+
+%\thesisdummypage
+                            % official signature page
+%---------------------------------------------------------------
+
+%------------------------------------------------------./[;---------pol[k
+\begin{keywords}
+ 
+\end{keywords}
+%\thesisdummypage
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\include{abstract}          % thesis abstract
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\tableofcontents
+\listoftables
+\listoffigures
+
+%---------------------------------------------------------------
+\clearemptydoublepage
+\include{acronyms}           % acronyms & abbreviations used in thesis
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\clearemptydoublepage
+\thesiscertificationpage    % statement of originality
+%---------------------------------------------------------------
+
+%%---------------------------------------------------------------
+%\clearemptydoublepage
+\include{acknowledge}            % acknowledgements
+%%---------------------------------------------------------------
+
+%==============================================================================
+
+%Chapter 1 : Introduction
+
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_1/Chapter_1}
+%==============================================================================
+
+% Chapter 2 : 
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_2/Chapter_2}
+%==============================================================================
+
+% Chapter 3 :
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_3/Chapter_3}
+%==============================================================================
+
+% Chapter 4 :
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_4/Chapter_4}
+%==============================================================================
+
+%Chapter 5 :
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_5/Chapter_5}
+%==============================================================================
+
+% Chapter 6 :
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_6/Chapter_6}
+%==============================================================================
+
+% Chapter 7 :
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_7/Chapter_7}
+%==============================================================================
+
+% Chapter 8 : 
+%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_8/Chapter_8}
+%==============================================================================
+
+%% Chapter 9 : 
+%%
+%==============================================================================
+\clearemptydoublepage
+\include{./Chapter_9/Chapter_9}
+%==============================================================================
+
+%==============================================================================
+%
+% Bibliography
+%
+%==============================================================================
+\clearemptydoublepage
+%\nocite{*}                      % include all references
+
+\bibliography{research}
+%---------------------------------------------------------------
+
+\end{document} 
